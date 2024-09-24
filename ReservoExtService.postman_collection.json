@@ -1,0 +1,379 @@
+{
+	"info": {
+		"_postman_id": "fdb1f71e-9b35-4a28-94e5-dfd9563c612d",
+		"name": "ReservoExtService",
+		"description": "version=1.0 Documentazione di esempio per servizio di validazione Sara per il contesato Baleari",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35054798"
+	},
+	"item": [
+		{
+			"name": "sara",
+			"item": [
+				{
+					"name": "status-verification",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "scope",
+									"value": "write:pets read:pets",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://petstore.swagger.io/oauth/dialog",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "implicit",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"documentNumber\": \"<string>\",\n  \"tipoDoc\": \"<int>\",\n  \"name\": \"<string>\",\n  \"surname\": \"<string>\",\n  \"secondSurname\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"transportType\": 2,\n  \"ticketNumber\": \"<string>\",\n  \"ticketPrice\": 0.0\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sara/status-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sara",
+								"status-verification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status-verification ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"documentNumber\": \"<string>\",\n  \"tipoDoc\": \"<int>\",\n  \"name\": \"<string>\",\n  \"surname\": \"<string>\",\n  \"secondSurname\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"transportType\": 2,\n  \"ticketNumber\": \"<string>\",\n  \"ticketPrice\": 0.0\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sara-validate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sara-validate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"{{ randomValue(000,001, 002, 003) }}\",\n    \"message\": \"{{ randomString(64) }}\",\n    \"saraTransCode\":  \"{{ randomString(64) }}\"\n}"
+						}
+					]
+				},
+				{
+					"name": "test-error",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "scope",
+									"value": "write:pets read:pets",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://petstore.swagger.io/oauth/dialog",
+									"type": "string"
+								},
+								{
+									"key": "grant_type",
+									"value": "implicit",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"documentNumber\": \"<string>\",\n  \"tipoDoc\": \"<int>\",\n  \"name\": \"<string>\",\n  \"surname\": \"<string>\",\n  \"secondSurname\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"transportType\": 2,\n  \"ticketNumber\": \"<string>\",\n  \"ticketPrice\": 0.0\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sara/sara-validate/test-error",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sara",
+								"sara-validate",
+								"test-error"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "test-error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "\n{\n  \"documentNumber\": \"<string>\",\n  \"tipoDoc\": \"<int>\",\n  \"name\": \"<string>\",\n  \"surname\": \"<string>\",\n  \"secondSurname\": \"<string>\",\n  \"origin\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"transportType\": 2,\n  \"ticketNumber\": \"<string>\",\n  \"ticketPrice\": 0.0\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sara/sara-validate/test-error",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sara",
+										"sara-validate",
+										"test-error"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "eu-lisa",
+			"item": [
+				{
+					"name": "status-verification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"carrierID\": \"C0949\",\r\n  \"nReqID\": \"IK99911100\",\r\n  \"pngs\": {\r\n    \"png\": [\r\n      {\r\n        \"arrivalLocation\": {\r\n          \"arrivalDate\": \"2022-09-20\",\r\n          \"arrivalLocationCode\": \"LTMDK\",\r\n          \"departureDatetime\": \"2022-09-20T11:00:00+02:00\",\r\n          \"scheduleNo\": \"1324F\"\r\n        },\r\n        \"docs\": {\r\n          \"dateOfBirth\": \"1985-01-01\",\r\n          \"expiryDate\": \"2025-04-12\",\r\n          \"givenName\": \"Alice\",\r\n          \"issuingState\": \"EGY\",\r\n          \"paxNationality\": \"EGY\",\r\n          \"sex\": \"female\",\r\n          \"surname\": \"Anderson\",\r\n          \"travelDocNbr\": \"940227152\",\r\n          \"travelDocType\": \"P\"\r\n        },\r\n        \"eesetiasOutOfScope\": false,\r\n        \"inTransit\": false,\r\n        \"multipleEntry\": false,\r\n        \"pReqID\": \"K00001\"\r\n      }\r\n    ]\r\n  },\r\n  \"serviceProviderID\": \"S063\",\r\n  \"submissionDT\": \"2024-02-08T16:15:00+03:00\",\r\n  \"user\": \"SWSDA004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/eulisa/status-verification",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"eulisa",
+								"status-verification"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "status-verification ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"carrierID\": \"C0949\",\r\n  \"nReqID\": \"IK99911100\",\r\n  \"pngs\": {\r\n    \"png\": [\r\n      {\r\n        \"arrivalLocation\": {\r\n          \"arrivalDate\": \"2022-09-20\",\r\n          \"arrivalLocationCode\": \"LTMDK\",\r\n          \"departureDatetime\": \"2022-09-20T11:00:00+02:00\",\r\n          \"scheduleNo\": \"1324F\"\r\n        },\r\n        \"docs\": {\r\n          \"dateOfBirth\": \"1985-01-01\",\r\n          \"expiryDate\": \"2025-04-12\",\r\n          \"givenName\": \"Alice\",\r\n          \"issuingState\": \"EGY\",\r\n          \"paxNationality\": \"EGY\",\r\n          \"sex\": \"female\",\r\n          \"surname\": \"Anderson\",\r\n          \"travelDocNbr\": \"940227152\",\r\n          \"travelDocType\": \"P\"\r\n        },\r\n        \"eesetiasOutOfScope\": false,\r\n        \"inTransit\": false,\r\n        \"multipleEntry\": false,\r\n        \"pReqID\": \"K00001\"\r\n      }\r\n    ]\r\n  },\r\n  \"serviceProviderID\": \"S063\",\r\n  \"submissionDT\": \"2024-02-08T16:15:00+03:00\",\r\n  \"user\": \"SWSDA004\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/eulisa/status-verification",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eulisa",
+										"status-verification"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"pngStates\": {\r\n    \"pngStateRS\": [\r\n      {\r\n        \"code\": \"{{ randomValue(OK,NOK EES, NA) }}\",\r\n        \"pReqID\": \"K00004\"\r\n      },\r\n      {\r\n        \"code\": \"{{ randomValue(OK,NOK EES, NA) }}\",\r\n        \"pReqID\": \"K00001\"\r\n      },\r\n      {\r\n        \"code\": \"{{ randomValue(OK,NOK EES, NA) }}\",\r\n        \"pReqID\": \"K00002\"\r\n      }\r\n    ]\r\n  },\r\n  \"nReqID\": \"IK99911100\",\r\n  \"responseDT\": \"2024-09-24T14:50:51.684Z\"\r\n}"
+						}
+					]
+				},
+				{
+					"name": "test-error",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"carrierID\": \"C0949\",\r\n  \"nReqID\": \"IK99911100\",\r\n  \"pngs\": {\r\n    \"png\": [\r\n      {\r\n        \"arrivalLocation\": {\r\n          \"arrivalDate\": \"2022-09-20\",\r\n          \"arrivalLocationCode\": \"LTMDK\",\r\n          \"departureDatetime\": \"2022-09-20T11:00:00+02:00\",\r\n          \"scheduleNo\": \"1324F\"\r\n        },\r\n        \"docs\": {\r\n          \"dateOfBirth\": \"1985-01-01\",\r\n          \"expiryDate\": \"2025-04-12\",\r\n          \"givenName\": \"Alice\",\r\n          \"issuingState\": \"EGY\",\r\n          \"paxNationality\": \"EGY\",\r\n          \"sex\": \"female\",\r\n          \"surname\": \"Anderson\",\r\n          \"travelDocNbr\": \"940227152\",\r\n          \"travelDocType\": \"P\"\r\n        },\r\n        \"eesetiasOutOfScope\": false,\r\n        \"inTransit\": false,\r\n        \"multipleEntry\": false,\r\n        \"pReqID\": \"K00001\"\r\n      }\r\n    ]\r\n  },\r\n  \"serviceProviderID\": \"S063\",\r\n  \"submissionDT\": \"2024-02-08T16:15:00+03:00\",\r\n  \"user\": \"SWSDA004\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/eulisa/status-verification/test-error",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"eulisa",
+								"status-verification",
+								"test-error"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "test-error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"carrierID\": \"C0949\",\r\n  \"nReqID\": \"IK99911100\",\r\n  \"pngs\": {\r\n    \"png\": [\r\n      {\r\n        \"arrivalLocation\": {\r\n          \"arrivalDate\": \"2022-09-20\",\r\n          \"arrivalLocationCode\": \"LTMDK\",\r\n          \"departureDatetime\": \"2022-09-20T11:00:00+02:00\",\r\n          \"scheduleNo\": \"1324F\"\r\n        },\r\n        \"docs\": {\r\n          \"dateOfBirth\": \"1985-01-01\",\r\n          \"expiryDate\": \"2025-04-12\",\r\n          \"givenName\": \"Alice\",\r\n          \"issuingState\": \"EGY\",\r\n          \"paxNationality\": \"EGY\",\r\n          \"sex\": \"female\",\r\n          \"surname\": \"Anderson\",\r\n          \"travelDocNbr\": \"940227152\",\r\n          \"travelDocType\": \"P\"\r\n        },\r\n        \"eesetiasOutOfScope\": false,\r\n        \"inTransit\": false,\r\n        \"multipleEntry\": false,\r\n        \"pReqID\": \"K00001\"\r\n      }\r\n    ]\r\n  },\r\n  \"serviceProviderID\": \"S063\",\r\n  \"submissionDT\": \"2024-02-08T16:15:00+03:00\",\r\n  \"user\": \"SWSDA004\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/eulisa/status-verification/test-error",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"eulisa",
+										"status-verification",
+										"test-error"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://baleari.swagger.io/v2",
+			"type": "string"
+		}
+	]
+}
