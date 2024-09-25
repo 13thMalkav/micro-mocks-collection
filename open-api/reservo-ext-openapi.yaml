@@ -1,10 +1,9 @@
 openapi: 3.0.3
 info:
-  title: ReservoExtService
-  description: >-
-    version=1.0 Documentazione di esempio per servizio di validazione Sara per
-    il contesato Baleari
+  title: ReservoExtService - 1.0
   version: 1.0.0
+  description: Documentazione di esempio per servizio di validazione Sara per
+    il contesato Baleari
   contact: {}
 servers:
   - url: http://baleari.swagger.io/v2
